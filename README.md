@@ -6,13 +6,13 @@
 
 ## 1、常用概念
 
-** 工作流引擎（ProcessEngine） **
+**工作流引擎（ProcessEngine）**
 这个是activiti的核心，activiti就是由此引擎为入口进行工作的，通过该引擎可以获取到其它的服务(历史服务、仓库服务等)
 
-** BPMN(业务流程建模与标注) **
+**BPMN(业务流程建模与标注)**
 这个是一个图，可以通过在eclipse中创建Activiti Diagrams，通过这些图来标识我们的一个具体业务流程。
 
-** 数据库 **
+**数据库**
 Activiti的后台是有数据库的支持，所有的表都以ACT_开头。
    第二部分是表示表的用途的两个字母标识。 用途也和服务的API对应
    	Activiti的工作流数据库有23张表    
@@ -23,20 +23,20 @@ Activiti的后台是有数据库的支持，所有的表都以ACT_开头。
 	- act_ru_*  ：保存流程运行相关的表  
 	- act_id_*  ：用户参与相关的表  
 	
-** activiti.cfg.xml **
+**activiti.cfg.xml**
 activiti的核心配置文件，主要用来配置连接数据库的配置参数
 
 
 ## 2、环境搭建
 
-** 安装插件 **
+**安装插件**
 上面提到过BPMN图,要知道我们的eclipse默认情况下是不能创建activiti项目的,需要我们手动安装插件。
 尽量在有网的情况下在线安装,安装地址为：http://activiti.org/designer/update/,重启即生效。
 
-** 注意： **安装完插件之后需要在preference->activiti->save actions 中的create ...打上勾，
+**注意 **安装完插件之后需要在preference->activiti->save actions 中的create ...打上勾，
 让在保存bpmn图的时候也新生成png图。
 
-** 创建项目 **
+**创建项目**
 ### 1、新建项目
 在eclipse中新建项目,选择activiti project。注意,activiti默认情况下是使用maven管理的,所以最好
 已经配置了maven。
@@ -129,7 +129,7 @@ activiti.cfg.xml:
 
 ## 3、activiti中其它的API介绍
 
-** 省去配置文件 **
+**省去配置文件**
 上面使用了activiti的核心配置文件,那么可不可以不用呢？当然是可以了。
 ```
 
@@ -150,7 +150,7 @@ activiti.cfg.xml:
 		ProcessEngine engine = configuration.buildProcessEngine();// 开始创建数据库
 
 ```
-** 使用zip加载流程 **
+**使用zip加载流程**
 
 ```
 
@@ -159,7 +159,7 @@ activiti.cfg.xml:
 
 ```
 
-** 流程变量 **
+**流程变量**
 作用：传递业务参数,指定办理人等
 使用:TaskService 和  RuntimeService 服务设置变量
 ```
@@ -177,7 +177,7 @@ activiti.cfg.xml:
 
 ```
 
-** 分支 **
+**分支**
 
 就是在我们完成一个任务之后可能会有分支,也就是"人"型结构,那么此时系统到底走哪条呢？
 
